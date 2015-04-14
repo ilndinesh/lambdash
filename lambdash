@@ -20,9 +20,9 @@ lambdash_function=lambdash
 lambdash_bucket=lambdash.alestic.com
 
 command="$*"
-uuid=$(uuid)
+uuid=$(uuidgen)
 
-args_file=$(mktemp /tmp/$lambdash_function-args-XXXXXX.json)
+args_file=$(mktemp /tmp/$lambdash_function-args-$uuid.json)
 stdout_file=$lambdash_function/$lambdash_function-$uuid-stdout.txt
 stderr_file=$lambdash_function/$lambdash_function-$uuid-stderr.txt
 cat > $args_file <<EOM
